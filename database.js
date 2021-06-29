@@ -1,13 +1,13 @@
 
-const books = [
+let books = [
     {
       ISBN: "12345Book",
       title: "Getting started with MERN",
       pubDate: "2021-07-07",
       language: "en",
       numPage: 250,
-      author: [1, 2],
-      publications: [1],
+      authors: [2],
+      publications: [2],
       category: ["tech", "programming", "education", "thriller"],
     },
     {
@@ -16,7 +16,7 @@ const books = [
         pubDate: "1998-07-12",
         language: ["en","hindi"],
         numPage: 250,
-        author: [1, 2],
+        author: [1],
         publications: [1],
         category: ["tech", "programming", "education", "thriller","horror"],
       },
@@ -29,7 +29,7 @@ const books = [
       name: "Pavan",
       books: ["12345Book", "1234566789Secret"],
     },
-    { id: 2, name: "Elon Musk", books: ["12345Book"] },
+    { id: 2, name: "Elon Musk", books: [] },
   ];
   
   const publications = [
@@ -41,7 +41,7 @@ const books = [
     {
       id: 1,
       name: "Vivek",
-      books: [],
+      books: ["54321Book"],
     },
   ];
   
