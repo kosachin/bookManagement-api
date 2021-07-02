@@ -490,41 +490,6 @@ booky.delete("/publication/delete/:pubId", (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Where to listen
 booky.listen(313, () =>
     console.log('Hey, you are running server on port 313 !!!'));
