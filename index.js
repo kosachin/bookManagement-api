@@ -1,5 +1,7 @@
-const express = require('express');
+require("dotenv").config();
 
+const express = require('express');
+const mongoose = require('mongoose')
 // Import DB
 const database = require('./database');
 
@@ -9,11 +11,20 @@ const booky = express();
 // Configuration
 booky.use(express.json());
 
+// Establish database connection
+mongoose.connect(process.env.MONGO_CONNECTION_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+
+}).then(() => console.log("connection established !!!!!!!!"));
+
 /*
 Route           /  
-Description     Get all books
+Description     Get all books 
 Access          Public
-Parameter       NONE
+Parameter       NONE  
 Methods         GET
 */
 booky.get('/', (req, res) => {
@@ -439,7 +450,7 @@ Methods         DELETE
 */
 booky.delete("/publication/delete/book/:isbn/:pubId", (req, res) => {
     database.publications.forEach((publication) => {
-        if(publication.id === parseInt(req.params.pubId)) {
+        if (publication.id === parseInt(req.params.pubId)) {
             const newPublicationBookList = publication.books.filter((book) => book !== req.params.isbn);
             publication.books = newPublicationBookList;
             return;
