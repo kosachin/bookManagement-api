@@ -15,21 +15,21 @@ let books = [
         title: "Getting started with Horror of MERN Stack👩🏼‍🦳",
         pubDate: "1998-07-12",
         language: ["en","hindi"],
-        numPage: 250,
+        numPage: 250,      
         author: [1],
         publications: [1],
         category: ["tech", "programming", "education", "thriller","horror"],
       },
-
+    
   ];
   
   const authors = [
-    {
+    { 
       id: 1,
       name: "Pavan",
       books: ["12345Book", "1234566789Secret"],
     },
-    { id: 2, name: "Elon Musk", books: [] },
+    { id: 2, name: "Elon Musk", books: ["12345Book"] },
   ];
   
   const publications = [

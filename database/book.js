@@ -4,13 +4,16 @@ const BookSchema = mongoose.Schema({
     ISBN: String,
     title: String,
     pubDate: String,
-    language: String,
-    numPage: [Number],
+    language: [String],
+    numPage: Number,
     authors: [Number],
-    publications: Number,
+    publications: [Number],
     category: [String],
 });
 
-const BookModel = mongoose.model('BookSchema')
+// Create a book model
+const BookModel = mongoose.model("books",BookSchema)
+
+// model => document model of mongodb
 
 module.exports = BookModel;
